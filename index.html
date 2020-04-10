@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Maze Game</title>
+    <style>
+      body{
+        margin:0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+        background-color:#8CC63E;
+      }
+      .container{
+        margin: 14px auto;
+        height: 550px;
+        width: 557px;
+        background-color: white;
+        padding-left: 13px;
+        padding-top: 7px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        
+      }
+      .box{
+        height: 50px;
+        width: 50px;
+        background-color:white;
+        display: inline-flex;
+        border-style: solid;
+        border-width: 3px;
+        border-color: white;
+        margin-left: -4px;
+        margin-bottom:-4px;
+        cursor: pointer;
+      }
+      .house{
+        position: absolute;
+        top: -10px;
+        left: 920px;
+      }
+      .boy{
+        position: absolute;
+        top: 440px;
+        left: 195px;
+        height: 100px;
+        width: 100px;
+        cursor: pointer;
+
+      }
+      #a01{
+        border-color: white white black white;
+        border-bottom-color: black;
+
+      }
+      #a02{
+        border-color:black white black white;
+
+      }
+      #a03{
+        border-color:white white black white;
+
+      }
+      #a04{
+        border-color:black black black white;
+
+       }
+       #a05{
+        border-color:white white black white;
+
+      }
+       #a06{
+        border-color:white white black white;
+
+      }
+      #a07{
+        border-color:black white black white;
+
+      }
+      #a08{
+        border-color:white black black white;
+
+      }
+       #a09{
+        border-color:white white black white;
+
+      }
+       #a10{
+        border-color:white black black white;
+
+      }
+       #a11{
+        border-color:white black white black;
+
+      }
+       #a13{
+        border-color:black black white white;
+
+      }
+       #a15{
+        border-color:black black white white;
+
+      }
+       #a16{
+        border-color:white black white white;
+
+      }
+      #a18{
+        border-color:black black white white;
+
+      }
+       #a19{
+        border-color:white black white white;
+
+      }
+       #a20{
+        border-color:white black white white;
+
+      }
+      #a21{
+        border-color:white black white black;
+
+      }
+        #a22{
+        border-color:black white white white;
+
+      }
+      #a23{
+        border-color:white black white white;
+
+      }
+       #a25{
+        border-color:black black white white;
+
+      }
+       #a26{
+        border-color:white black white white;
+
+      }
+       #a28{
+        border-color:black white white white;
+
+      }
+       #a29{
+        border-color:black black white white;
+
+      }
+      #a30{
+        border-color:white black white white;
+
+      }
+      #a31{
+        border-color:white black white black;
+
+      }
+       #a32{
+        border-color:white black white white;
+
+      }
+       #a33{
+        border-color:black white white white;
+
+      }
+       #a34{
+        border-color:black black white white;
+
+      }
+      #a36{
+        border-color:white black white white;
+
+      }
+       #a37{
+        border-color:black black white white;
+
+      }
+       #a39{
+        border-color:white black white white;
+
+      }
+       #a40{
+        border-color:black black white white;
+
+      }
+       #a41{
+        border-color:black white white black;
+
+      }
+       #a42{
+        border-color:white black white white;
+
+      }
+       #a43{
+        border-color:black white white white;
+
+      }
+       #a44{
+        border-color:white black white white;
+
+      }
+       #a45{
+        border-color:white black white white;
+
+      }
+       #a46{
+        border-color:black black white white;
+
+      }
+       #a48{
+        border-color:black black white white;
+
+      }
+       #a49{
+        border-color:black white white white;
+
+      }
+       #a50{
+        border-color:white black white white;
+
+      }
+       #a51{
+        border-color:white white white black;
+
+      }
+       #a52{
+        border-color:black white white white;
+
+      }
+       #a53{
+        border-color:black white white white;
+
+      }
+       #a54{
+        border-color:black black white white;
+
+      }
+       #a55{
+        border-color:black white white white;
+
+      }
+       #a56{
+        border-color:white black white white;
+
+      }
+       #a57{
+        border-color:white black white white;
+
+      }
+       #a58{
+        border-color:black white white white;
+
+      }
+       #a59{
+        border-color:white black white white;
+
+      }
+       #a60{
+        border-color:white black white white;
+
+      }
+       #a61{
+        border-color:white black white black;
+
+      }
+        #a63{
+        border-color:black white white white;
+
+      }
+      #a64{
+        border-color:black white white white;
+
+      }
+      #a65{
+        border-color:white black white white;
+
+      }
+      #a66{
+        border-color:black white white white;
+
+      }
+      #a67{
+        border-color:black white white white;
+
+      }
+      #a68{
+        border-color:black white white white;
+
+      }
+      #a69{
+        border-color:black black white white;
+
+      }
+      #a70{
+        border-color:white black white white;
+
+      }
+      #a71{
+        border-color:black black white black;
+
+      }
+      #a72{
+        border-color:black white white white;
+
+      }
+       #a73{
+        border-color:white black white white;
+
+      }
+      #a74{
+        border-color:black white white white;
+
+      }
+      #a75{
+        border-color:black white white white;
+
+      }
+      #a76{
+        border-color:black white white white;
+
+      }
+      #a77{
+        border-color:black white white white;
+
+      }
+      #a78{
+        border-color:black white white white;
+
+      }
+      #a79{
+        border-color:black white white white;
+
+      }
+      #a80{
+        border-color:white black white white;
+
+      }
+      #a81{
+        border-color:white white white black;
+
+      }
+     #a82{
+        border-color:white black white white;
+
+      }
+      #a83{
+        border-color:black white white white;
+
+      }
+      #a84{
+        border-color:black white white white;
+
+      }
+      #a85{
+        border-color:black white white white;
+
+      }
+      #a86{
+        border-color:white black white white;
+
+      }
+      #a87{
+        border-color:white black white white;
+
+      }
+       #a89{
+        border-color:white black white white;
+
+      }
+       #a90{
+        border-color:white black white white;
+
+      }
+      
+       #a91{
+        border-color:black black white black;
+
+      }
+       #a92{
+        border-color:black white white white;
+
+      }
+       #a93{
+        border-color:black white white white;
+
+      }
+       #a94{
+        border-color:black white white white;
+
+      }
+       #a95{
+        border-color:black white white white;
+
+      }
+       #a96{
+        border-color:black black white white;
+
+      }
+       #a97{
+        border-color:black white white white;
+  }
+       #a98{
+        border-color:black black white white;
+
+      }
+        #a99{
+        border-color:black white white white;
+
+      }
+        #a100{
+        border-color:black white white white;
+
+      }
+      .steps{
+        top: 50px;
+        left: 390px;
+        position: absolute;
+        height: 500px;
+        width: 500px;
+        background-color:rgb(140, 198, 62,0.9);
+      }
+      #end-home{
+        margin:20px 0px 0px 200px;
+      }
+      #end-boy{
+        margin-top: -200px;
+        margin-left: 100px;
+      }
+      #cele{
+        color:white;
+        text-align: right;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-top: -100px;
+        margin-right: 100px;
+        font-weight: 800;
+        font-size: 50px;
+      }
+      #reached{
+        margin-top:  50px;
+        color:#8CC63E;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 800;
+        font-size: 30px;
+        background-color: white;
+
+      }
+      #code{
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: 800;
+        font-size: 25px;
+
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="house">
+        <img src="images/house.png" height="150px" width="150px" id="img"/>
+      </div>
+      <div class="container">
+        <div class="row-1">
+          <div class="box" id="a91"></div>
+          <div class="box" id="a92"></div>
+          <div class="box" id="a93"></div>
+          <div class="box" id="a94"></div>
+          <div class="box" id="a95"></div>
+          <div class="box" id="a96"></div>
+          <div class="box" id="a97"></div>
+          <div class="box" id="a98"></div>
+          <div class="box" id="a99"></div>
+          <div class="box" id="a100"></div>
+        </div>
+      <div class="row-2">
+          <div class="box" id="a81"></div>
+          <div class="box" id="a82"></div>
+          <div class="box" id="a83"></div>
+          <div class="box" id="a84"></div>
+          <div class="box" id="a85"></div>
+          <div class="box" id="a86"></div>
+          <div class="box" id="a87"></div>
+          <div class="box" id="a88"></div>
+          <div class="box" id="a89"></div>
+          <div class="box" id="a90"></div>
+        </div>
+        <div class="row-3">
+          <div class="box" id="a71"></div>
+          <div class="box" id="a72"></div>
+          <div class="box" id="a73"></div>
+          <div class="box" id="a74"></div>
+          <div class="box" id="a75"></div>
+          <div class="box" id="a76"></div>
+          <div class="box" id="a77"></div>
+          <div class="box" id="a78"></div>
+          <div class="box" id="a79"></div>
+          <div class="box" id="a80"></div>
+        </div>
+         <div class="row-4">
+          <div class="box" id="a61"></div>
+          <div class="box" id="a62"></div>
+          <div class="box" id="a63"></div>
+          <div class="box" id="a64"></div>
+          <div class="box" id="a65"></div>
+          <div class="box" id="a66"></div>
+          <div class="box" id="a67"></div>
+          <div class="box" id="a68"></div>
+          <div class="box" id="a69"></div>
+          <div class="box" id="a70"></div>
+        </div>
+        <div class="row-5">
+          <div class="box" id="a51"></div>
+          <div class="box" id="a52"></div>
+          <div class="box" id="a53"></div>
+          <div class="box" id="a54"></div>
+          <div class="box" id="a55"></div>
+          <div class="box" id="a56"></div>
+          <div class="box" id="a57"></div>
+          <div class="box" id="a58"></div>
+          <div class="box" id="a59"></div>
+          <div class="box" id="a60"></div>
+        </div>
+        <div class="row-6">
+          <div class="box" id="a41"></div>
+          <div class="box" id="a42"></div>
+          <div class="box" id="a43"></div>
+          <div class="box" id="a44"></div>
+          <div class="box" id="a45"></div>
+          <div class="box" id="a46"></div>
+          <div class="box" id="a47"></div>
+          <div class="box" id="a48"></div>
+          <div class="box" id="a49"></div>
+          <div class="box" id="a50"></div>
+        </div>
+        <div class="row-7">
+          <div class="box" id="a31"></div>
+          <div class="box" id="a32"></div>
+          <div class="box" id="a33"> </div>
+          <div class="box" id="a34"></div>
+          <div class="box" id="a35"></div>
+          <div class="box" id="a36"></div>
+          <div class="box" id="a37"></div>
+          <div class="box" id="a38"></div>
+          <div class="box" id="a39"></div>
+          <div class="box" id="a40"></div>
+        </div>
+        <div class="row-8">
+          <div class="box" id="a21"></div>
+          <div class="box" id="a22"></div>
+          <div class="box" id="a23"></div>
+          <div class="box" id="a24"></div>
+          <div class="box" id="a25"></div>
+          <div class="box" id="a26"></div>
+          <div class="box" id="a27"></div>
+          <div class="box" id="a28"></div>
+          <div class="box" id="a29"></div>
+          <div class="box" id="a30"></div>
+        </div>
+        <div class="row-9">
+          <div class="box" id="a11"></div>
+          <div class="box" id="a12"></div>
+          <div class="box" id="a13"></div>
+          <div class="box" id="a14"></div>
+          <div class="box" id="a15"></div>
+          <div class="box" id="a16"></div>
+          <div class="box" id="a17"></div>
+          <div class="box" id="a18"></div>
+          <div class="box" id="a19"></div>
+          <div class="box" id="a20"></div>
+        </div>
+        <div class="row-10">
+          <div class="box" id="a01">
+            <!--img src="images/boy1.png" height="50px" width="50px" id="img"/-->
+          </div>
+          <div class="box" id="a02">
+             
+          </div>
+          <div class="box" id="a03" ></div>
+          <div class="box" id="a04"></div>
+          <div class="box" id="a05"></div>
+          <div class="box" id="a06"></div>
+          <div class="box" id="a07"></div>
+          <div class="box" id="a08"></div>
+          <div class="box" id="a09"></div>
+          <div class="box" id="a10"></div>
+        </div>
+        </div>
+        <div class="boy" id="boys">
+        <img src="images/boy1.png" height="150px" width="150px" id="img-boy"/>
+      
+      </div>
+      <div class="steps" id="steps-container" style="display: none;">
+        <div>
+          <img src="images/house.png" height="200px" width="200px"
+          id="end-home"/>
+          <img src="images/boy1.png" height="300px" width="150px"
+          id="end-boy"/>
+          <h1 id="cele">Yahoo!</h1>
+          <h2 id="reached">Reached Home in <span id="steps-txt">30</span> Steps</h2>
+          <p id="code">&copy; Code by Wasim</p>
+        </div>
+      
+      </div>
+      </div>
+      <script>
+        var click=new Audio("media/click.mp3");
+        var wrongStep=new Audio("media/no.mp3");
+        var box=document.getElementsByClassName('box');
+        var boyBox=document.getElementById('boys');
+        var boyImg=document.getElementById('img-boy');
+        var stepText=document.getElementById('steps-txt');
+        var stepCon=document.getElementById('steps-container');
+        var homeImg=document.getElementById('img');
+        var previous=box[90];
+        var steps=0;
+        for(var i=0;i<box.length;i++){
+          box[i].onclick=function(){
+            boyImg.style.display="none";
+            move(previous,this);
+          }
+        }
+        function move(pre,cur){
+          var preTarget=pre;
+          var curTarget=cur;
+          var img=`<img src="images/boy1.png" height="49px" width="50px" id="img"/>`;
+          //move forward
+          if(getId(preTarget.id)==getId(curTarget.id)||getId(curTarget.id)==(Number(getId(preTarget.id))+1)){
+            var preColor=document.getElementById(preTarget.id);
+            preColor=window.getComputedStyle(preColor);
+            preColor=preColor.borderRightColor;
+            var curColor=document.getElementById(curTarget.id);
+            curColor=window.getComputedStyle(curColor);
+            curColor=curColor.borderLeftColor;
+            if(preColor=="rgb(255, 255, 255)"&&curColor=="rgb(255, 255, 255)"){
+               click.play();
+               preTarget.innerHTML="";
+               curTarget.innerHTML=img;
+               previous=curTarget;
+               steps++;
+            }
+            else{
+                wrongStep.play();
+            }
+          }
+          //move backward
+
+          else if((Number(getId(preTarget.id))-1)==(getId(curTarget.id))){
+            var preColor=document.getElementById(preTarget.id);
+            preColor=window.getComputedStyle(preColor);
+            preColor=preColor.borderLeftColor;
+            var curColor=document.getElementById(curTarget.id);
+            curColor=window.getComputedStyle(curColor);
+            curColor=curColor.borderRightColor;
+            if(preColor=="rgb(255, 255, 255)"&&curColor=="rgb(255, 255, 255)"){
+              click.play();
+               preTarget.innerHTML="";
+               curTarget.innerHTML=img;
+               previous=curTarget;
+               steps++;
+            }
+            else{
+                wrongStep.play();
+            }
+          }
+          //move upward
+          else if((Number(getId(preTarget.id))+10)==(getId(curTarget.id))){
+            var preColor=document.getElementById(preTarget.id);
+            preColor=window.getComputedStyle(preColor);
+            preColor=preColor.borderTopColor;
+            var curColor=document.getElementById(curTarget.id);
+            curColor=window.getComputedStyle(curColor);
+            curColor=curColor.borderBottomColor;
+            if(preColor=="rgb(255, 255, 255)"&&curColor=="rgb(255, 255, 255)"){
+               click.play();
+               preTarget.innerHTML="";
+               curTarget.innerHTML=img;
+               previous=curTarget;
+               steps++;
+            }
+            else{
+               wrongStep.play();
+            }
+             
+          }
+          else if((Number(getId(preTarget.id))-10)==(getId(curTarget.id))){
+            var preColor=document.getElementById(preTarget.id);
+            preColor=window.getComputedStyle(preColor);
+            preColor=preColor.borderBottomColor;
+            var curColor=document.getElementById(curTarget.id);
+            curColor=window.getComputedStyle(curColor);
+            curColor=curColor.borderTopColor;
+            if(preColor=="rgb(255, 255, 255)"&&curColor=="rgb(255, 255, 255)"){
+               click.play();
+               preTarget.innerHTML="";
+               curTarget.innerHTML=img;
+               previous=curTarget;
+               steps++;
+            }
+            else{
+                wrongStep.play();
+            }
+          }
+            
+        }
+        function getId(elm){
+          if(elm.length<4){
+              var id=elm[1]+""+elm[2];
+              return id;
+          }
+          else{
+            var id=elm[1]+""+elm[2]+""+elm[3];
+            return id;
+          }
+          
+        }
+        box[9].onclick=function(){
+          if(previous.id=="a90"){
+          move(previous,this);
+          var mveChild=document.getElementById('a100');
+          mveChild.innerHTML="";
+          homeImg.style.display="none";
+          stepCon.style.display="block";
+          stepText.textContent=steps;
+
+          }
+        }
+      </script>
+  </body>
+</html>
